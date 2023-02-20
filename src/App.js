@@ -1,7 +1,13 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
+import About from './components/About';
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
 
 
 function App() {
@@ -22,10 +28,16 @@ function App() {
 
   return (
     <>
-    <Navbar title="UtilTexts" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
-    <div className='container my-3'>
-      <TextForm mode={mode}/>
-    </div>
+      <Router>
+      <Navbar title="UtilTexts" aboutText="About Us" mode={mode} toggleMode={toggleMode}/>
+      <div className='container my-3'>
+      <Routes>
+          <Route path="/about" element={<About/>} />
+          <Route path="/home" element={<TextForm mode={mode}/>} />
+          <Route path="/" element={<TextForm mode={mode}/>} />
+      </Routes>
+      </div>
+      </Router>
     </>
   );
 }

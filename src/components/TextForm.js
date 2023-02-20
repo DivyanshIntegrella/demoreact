@@ -37,15 +37,6 @@ export default function TextForm(props){
         setText(e.target.value);
     }
 
-    // const WordCount= (setText) =>{
-    //     let words = 0;
-    //     for (let i = 0; i < WordCount.length; i++)
-    //       if (setText(i) === " "){
-    //         words = words++;
-    //     }
-    //     words += 1;
-    //   }
-
     return(
         <>
         <div className='container my-3' style={{color: props.mode==='dark'?'white':'black'}}>
